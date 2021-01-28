@@ -1,29 +1,22 @@
-import './App.css';
+import CommentDetail  from "./CommentDetail";
+import { useState } from 'react';
+// import ApprovalCard from './ApprovalCard';
 
 function App() {
+  const  [ data, setData ] = useState( [
+    { author: 'Knight', time : '9.00AM', text: 'Great Post!', id: 1},
+    { author: 'Luffy', time : '12.00PM', text: 'I like the post', id: 2},
+    { author: 'Babu Bhaia', time : '12.00AM', text: 'Great', id: 3}
+
+  ])
   return (
+    // <ul>
     <div className="ui container comments">
-      <dir className="comment">
-        {/* image */}
-        <a href="/" className="avatar">
-          <img alt="avatar"/>
-        </a>
-        {/* author name */}
-        <div className="content">
-          <a href="/" className="author">
-            knight
-          </a>
-          {/* time */}
-          <div className="metadata">
-            <span className="date">Today at 6:00PM</span>
-            {/* text */}
-            <div className="text">
-              Nice Blog Post!
-            </div>
-          </div>
-        </div>
-      </dir>
+      {/* <ApprovalCard> */}
+        <CommentDetail data = {data}/>
+      {/* </ApprovalCard> */}
     </div>
+    // </ul>
   );
 }
 
